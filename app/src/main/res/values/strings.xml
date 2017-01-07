@@ -1,0 +1,226 @@
+<resources>
+    <string name="app_name">Love Advice 2.0</string>
+    <string name="copyright">Copyright © 2017 All Rights Reserved.</string>
+    <string name="exit_app">Exit</string>
+    <string name="about_app">About</string>
+    <string name="user">Student Number:</string>
+    <string name="pass">Password:</string>
+
+    <string name="studno">Student Number: (e.g 0082016XXXX)</string>
+    <string name="lname">Last name:</string>
+    <string name="fname">First name:</string>
+    <string name="mname">Middle name:</string>
+    <string name="program">Program: MAWD, STEM or DIGAR</string>
+    <string name="gender">Gender: Male or Female</string>
+
+    <string name="err_msg_user">Enter your student number</string>
+    <string name="err_msg_pass">Enter the password</string>
+    <string name="title_activity_main">Love Advice</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="wifi_text">No Internet Connection</string>
+    <string name="wifi_paragraph">You are offline. Please check your internet connection and try again.</string>
+    <string name="search_message">Search...</string>
+
+    <string name="Home">Home</string>
+    <string name="Categories">3 Major Categories</string>
+    <string name="Glossary">Glossary</string>
+    <string name="About">About App</string>
+
+    <string-array name="QuotesList">
+        <item>"Dont be afraid to fail. Be afraid not to try."</item>
+        <item>"Cherish your human connections your relationships with friends and family."</item>
+        <item>"Its not what we have in life. But who we have in our life matters."</item>
+        <item>"Family is where life begins and love never ends."</item>
+        <item>"Family is not an important thing. Its everything."</item>
+        <item>"If you want something you never had. You have to do something you have never done."</item>
+        <item>"Family means no one gets left behind or forgotten."</item>
+        <item>"When trouble comes its your family that supports you."</item>
+        <item>"A real friend is one who walks in when the rest of the world walks out."</item>
+        <item>"True friendship comes when the silence between two people is comfortable."</item>
+        <item>"A true friend never gets in your way unless you happen to be going down."</item>
+        <item>"Friendship is the only cement that will ever hold the world together."</item>
+        <item>"Friends are those rare people who ask how we are and then wait to hear the answer."</item>
+        <item>"Our family is a circle of strength of love with every birth and every union the circle grows."</item>
+        <item>"The love of a family is one of the greatest blessing in our life.</item>
+        <item>"Family is what happens when two people fall in love."</item>
+        <item>"A friend knows the song in my heart and sings it to me when my memory fails."</item>
+        <item>"Once in a while right in the middle of an ordinary life love gives us a fairy tale."</item>
+        <item>"The best time to make friends is before you need them."</item>
+        <item>"Sticking with your family is what makes it a family."</item>
+        <item>"I would rather walk with a friend in the dark than alone in the light."</item>
+        <item>"The strength of a nation derives from the integrity of the home."</item>
+        <item>"If you want to change the world, go home and love your family."</item>
+        <item>"Home is where you are loved the most and act the worst."</item>
+        <item>"A friend who understands your tears is much more valuable than a lot of friends who only know your smile."</item>
+        <item>"Blood makes you related. Loyalty makes you family."</item>
+        <item>"Life is an awful ugly place to not have a best friend."</item>
+        <item>"You dont choose your family. They are Gods gift to you as you are to them."</item>
+        <item>"Only a true best friend can protect you from your immortal enemies."</item>
+        <item>"Family, friends and relationships are the blessings of the God. They are the best way to access God."</item>
+        <item>"Life without friendship is like the sky without the sun."</item>
+        <item>"Real family does not come from your blood. It is the people standing beside you when no one else is."</item>
+        <item>"Friends find the sweetest sense of happiness comes from simple being together."</item>
+        <item>"Your family is the best team you could ever have."</item>
+        <item>"Friends can make you laugh like no one else can."</item>
+        <item>"Often we think of love in terms of people, whether they are friends, family, or romantic partners."</item>
+        <item>"People with the greatest advice usually have the most problems."</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="about">
+        This Love Advice Android Application
+        is developed by our IT Project team
+        for the Senior High Students of
+        STI Academic Center Caloocan and also
+        a requirements for IT Special Project.
+    </string>
+    <string-array name="FamilyCategory">
+        <item>"You are more important than your problems."</item>
+        <item>"If you do not stand for something, you will fall for anything."</item>
+        <item>"Find the one who makes your heart smile."</item>
+        <item>"Family are the ones who would do anything to see you smile and who loves you."</item>
+        <item>"A family is a little world created by love."</item>
+        <item>"People come and go in our lives, but a beauty of life is that our family is always there."</item>
+        <item>"We do not need sugar, flour or rice or anything else. We just want to see our dear ones."</item>
+        <item>"Family is the most important thing in the world."</item>
+        <item>"Family, we may not have it all together but together we have it all."</item>
+        <item>"Family is like music, some high notes, some low notes, but always a beautiful song."</item>
+        <item>"I believe the world is one big family, and we need to help each others."</item>
+        <item>"Family is not always about blood, sometimes its about who is there to support you when you need them."</item>
+        <item>"It does not matter what kind of problems a family is having, it should always stay in the family."</item>
+        <item>"The best way to resolve any problem in the human world is for all sides to sit down and talk."</item>
+        <item>"You dont choose your family. They are Gods gift to you, as you are to them."</item>
+    </string-array>
+    <string-array name="FriendsCategory">
+        <item>"Be with someone who brings out the best in you."</item>
+        <item>"A friend is the one that knows you as you are and understands where you have been."</item>
+        <item>"Best friends make the good times better and the hard times easier."</item>
+        <item>"A true friend is the best Possession."</item>
+        <item>"Friends are Gods way of taking care of us."</item>
+        <item>"Friendship is one mind in two bodies."</item>
+        <item>"Keep your friends close, your enemies even closer."</item>
+        <item>"No better relation than a prudent and faithful friend."</item>
+        <item>"There is nothing on this earth more to be prized than true friendship."</item>
+        <item>"Friendship is always a sweet responsibility, never an opportunity."</item>
+        <item>"A friend is someone who gives you total freedom to be yourself."</item>
+        <item>"Friends show their love in times of trouble, not in happiness."</item>
+        <item>"One of the most beautiful qualities of true friendship is to understand and to be understood."</item>
+        <item>"A real friend is one who walks in when the rest of the world walks out."</item>
+        <item>"No person is your friend who demands your silence, or denies your right to grow."</item>
+    </string-array>
+    <string-array name="SpecialCategory">
+        <item>"A person who loves you truly will never let you go whatever the situation is."</item>
+        <item>"A good relationship consists of two people who accept each others past and support each others future."</item>
+        <item>"Love is not love until you give it away."</item>
+        <item>"If you cannot be happy and content by yourself then you should not be in a relationship."</item>
+        <item>"Relationships are the flavors of life."</item>
+        <item>"You can tell how often a person thinks of you by how often they tell you they think of you."</item>
+        <item>"Never love anybody that treats you like you are ordinary."</item>
+        <item>"If your love for another person does not include loving yourself then your love is incomplete."</item>
+        <item>"Love cannot live where there is no trust."</item>
+        <item>"Do not settle for a relationship that would not let you be yourself."</item>
+        <item>"Each relationship nurtures a strength or weakness within you."</item>
+        <item>"The best person to talk to about the problems in your relationship is the person you are in a relationship with."</item>
+        <item>"Assumptions are the termites of relationships."</item>
+        <item>"In general, the problem in a relationship is when the couple stagnate."</item>
+        <item>"Problems in relationship occur because each person is concentrating on what is missing in the other person."</item>
+    </string-array>
+    <string-array name="GlossaryList">
+        <item><![CDATA[<b><font color="red">Enraged</font></b>  very angry or furious]]></item>
+        <item><![CDATA[<b><font color="red">Furious</font></b>  full of anger or energy]]></item>
+        <item><![CDATA[<b><font color="red">Frustrated</font></b>  feeling or expressing distress and annoyance]]></item>
+        <item><![CDATA[<b><font color="red">Shocked</font></b>  cause to feel surprised and upset]]></item>
+        <item><![CDATA[<b><font color="red">Livid</font></b>  furiously angry]]></item>
+        <item><![CDATA[<b><font color="red">Frightened</font></b>  afraid or anxious]]></item>
+        <item><![CDATA[<b><font color="red">Nervous</font></b>  easily agitated or alarmed]]></item>
+        <item><![CDATA[<b><font color="red">Restless</font></b>  unable to rest or relax as result of anxiety]]></item>
+        <item><![CDATA[<b><font color="red">Fuming</font></b>  feel, show or express great anger]]></item>
+        <item><![CDATA[<b><font color="red">Apprehensive</font></b>  fearful that something bad will happen]]></item>
+        <item><![CDATA[<b><font color="red">Worried</font></b>  anxious about potential problems]]></item>
+        <item><![CDATA[<b><font color="red">Annoyed</font></b>  slightly angry or irritated]]></item>
+        <item><![CDATA[<b><font color="red">Repulsed</font></b>  cause to feel intense distaste and aversion]]></item>
+        <item><![CDATA[<b><font color="red">Troubled</font></b>  showing distress or anxiety]]></item>
+        <item><![CDATA[<b><font color="red">Uneasy</font></b>  feeling anxiety and uncomfortable]]></item>
+        <item><![CDATA[<b><font color="red">Peeved</font></b>  annoy or irritate]]></item>
+        <item><![CDATA[<b><font color="black">Surprised</font></b>  feeling or showing surprise]]></item>
+        <item><![CDATA[<b><font color="black">Upbeat</font></b>  cheerful or optimistic]]></item>
+        <item><![CDATA[<b><font color="black">Motivated</font></b>  motive for doing something]]></item>
+        <item><![CDATA[<b><font color="black">Ecstatic</font></b>  feeling overwhelming joyful excitement]]></item>
+        <item><![CDATA[<b><font color="black">Hyper</font></b>  hyperactive or unusually energetic]]></item>
+        <item><![CDATA[<b><font color="black">Cheerful</font></b>  noticeably happy and optimistic]]></item>
+        <item><![CDATA[<b><font color="black">Inspired</font></b>  arising from some external creative impulse]]></item>
+        <item><![CDATA[<b><font color="black">Elated</font></b>  ecstatically happy]]></item>
+        <item><![CDATA[<b><font color="black">Energized</font></b>  give vitality and enthusiasm to]]></item>
+        <item><![CDATA[<b><font color="black">Lively</font></b>  full of life and energy]]></item>
+        <item><![CDATA[<b><font color="black">Optimistic</font></b>  hopeful and confident]]></item>
+        <item><![CDATA[<b><font color="black">Thrilled</font></b>  sudden feeling of excitement and pleasure]]></item>
+        <item><![CDATA[<b><font color="black">Pleasant</font></b>  sense of happy satisfaction]]></item>
+        <item><![CDATA[<b><font color="black">Joyful</font></b>  feeling great pleasure and happiness]]></item>
+        <item><![CDATA[<b><font color="black">Proud</font></b>  satisfaction as a result of ones own achievements]]></item>
+        <item><![CDATA[<b><font color="black">Blissful</font></b>  extremely happy and joy]]></item>
+        <item><![CDATA[<b><font color="blue">Disgusted</font></b>  to feel revulsion or disapproval]]></item>
+        <item><![CDATA[<b><font color="blue">Disappointed</font></b>  sad because someone has failed to fulfill ones hopes]]></item>
+        <item><![CDATA[<b><font color="blue">Glum</font></b>  looking or feeling dejected]]></item>
+        <item><![CDATA[<b><font color="blue">Ashamed</font></b>  embarrassed or guilty of ones action]]></item>
+        <item><![CDATA[<b><font color="blue">Mortified</font></b>  to feel ashamed or humiliated]]></item>
+        <item><![CDATA[<b><font color="blue">Alienated</font></b>  to feel isolated or estranged]]></item>
+        <item><![CDATA[<b><font color="blue">Mopey</font></b>  gloomily and persistently about something]]></item>
+        <item><![CDATA[<b><font color="blue">Apathetic</font></b>  showing no interest or concern]]></item>
+        <item><![CDATA[<b><font color="blue">Embarrassed</font></b>  feeling or showing embarrassment]]></item>
+        <item><![CDATA[<b><font color="blue">Excluded</font></b>  deny access from a place or privilege]]></item>
+        <item><![CDATA[<b><font color="blue">Timid</font></b>  lack of courage or confidence]]></item>
+        <item><![CDATA[<b><font color="blue">Drained</font></b>  deprived of strength or vitality]]></item>
+        <item><![CDATA[<b><font color="blue">Alone</font></b>  having no one else present on ones own]]></item>
+        <item><![CDATA[<b><font color="blue">Down</font></b>  unhappy and depressed]]></item>
+        <item><![CDATA[<b><font color="blue">Bored</font></b>  feeling unoccupied or lacks interest]]></item>
+        <item><![CDATA[<b><font color="blue">Tired</font></b>  no longer fresh or in good condition]]></item>
+        <item><![CDATA[<b><font color="green">Blessed</font></b>  enjoying the bliss of heaven]]></item>
+        <item><![CDATA[<b><font color="green">At Ease</font></b>  free from worry and feel relaxed]]></item>
+        <item><![CDATA[<b><font color="green">Content</font></b>  state of peaceful happiness]]></item>
+        <item><![CDATA[<b><font color="green">Fulfilled</font></b>  happy of developing ones abilities]]></item>
+        <item><![CDATA[<b><font color="green">Humble</font></b>  showing a modest of ones own importance]]></item>
+        <item><![CDATA[<b><font color="green">Secure</font></b>  fixed so as not to give away]]></item>
+        <item><![CDATA[<b><font color="green">Chill</font></b>  very relaxed or easygoing]]></item>
+        <item><![CDATA[<b><font color="green">Grateful</font></b>  showing an appreciation of kindness]]></item>
+        <item><![CDATA[<b><font color="green">Calm</font></b>  not showing of nervousness or other emotions]]></item>
+        <item><![CDATA[<b><font color="green">Satisfied</font></b>  contented and pleased]]></item>
+        <item><![CDATA[<b><font color="green">Relaxed</font></b>  free from tension and anxiety]]></item>
+        <item><![CDATA[<b><font color="green">Carefree</font></b>  free from responsibility]]></item>
+        <item><![CDATA[<b><font color="green">Relieved</font></b>  no longer feeling of distressed]]></item>
+        <item><![CDATA[<b><font color="green">Restful</font></b>  having a quiet and soothing quality]]></item>
+        <item><![CDATA[<b><font color="green">Tranquil</font></b>  free from disturbance]]></item>
+        <item><![CDATA[<b><font color="green">Serene</font></b>  calm, peaceful and untroubled]]></item>
+    </string-array>
+
+    <integer name="swing_anim_time">750</integer>
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Set Important Reminder</string>
+    <string name="slide_1_desc">The easiest way to organize your day effectively!</string>
+
+    <string name="slide_2_title">Free Quotes and Advice</string>
+    <string name="slide_2_desc">See different quotes and advice from the 3 of the major categories of love!</string>
+
+    <string name="slide_3_title">Feelings and Emotions</string>
+    <string name="slide_3_desc">Search within the app about different kinds of feelings and emotions!</string>
+
+    <string name="slide_4_title">Get Your Advice!</string>
+    <string name="slide_4_desc">Take the assessment with the categories you have problems with and get an advice from the app!</string>
+
+    <string name="slide_5_title">Online Counseling</string>
+    <string name="slide_5_desc">A real-time conversation between you and your counselor through the app for further counseling!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+
+</resources>

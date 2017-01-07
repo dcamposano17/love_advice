@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#ff0000"
+        android:gravity="center_horizontal"
+        android:padding="20dp"
+        android:textSize="20sp"
+        android:text="@string/wifi_text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/foreColor"
+        android:textStyle="bold" />
+
+    <TextView
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:text="@string/wifi_paragraph"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:background="@color/foreColor"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@animator/greenbutton"
+            android:textColor="@color/foreColor"
+            android:text="Settings"
+            android:layout_marginRight="10dp"
+            android:id="@+id/btnSettings" />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:background="@animator/bluebutton"
+            android:layout_height="wrap_content"
+            android:text="Ok"
+            android:textColor="@color/foreColor"
+            android:id="@+id/btnOk" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="blue_light">#0288D1</color>
+    <color name="blue_dark">#0277BD</color>
+    <color name="blue_shadow">#01579B</color>
+
+    <color name="green_light">#388E3C</color>
+    <color name="green_dark">#2E7D32</color>
+    <color name="green_shadow">#1B5E20</color>
+
+    <color name="red_light">#FF0000</color>
+    <color name="red_dark">#B30000</color>
+    <color name="red_shadow">#990000</color>
+
+    <color name="purple_light">#6F22B6</color>
+    <color name="purple_dark">#481676</color>
+    <color name="purple_shadow">#3B1260</color>
+
+    <color name="textColor">#00564E</color>
+    <color name="foreColor">#FFFFFF</color>
+    <color name="foreColor2">#000000</color>
+
+    <color name="transparent">#08000000</color>
+
+    <color name="button_light">#FF6464</color>
+    <color name="button_dark">#FF3434</color>
+    <color name="button_shadow">#FF1A1A</color>
+
+    <color name="containerColor">#607D8B</color>
+
+    <color name="amber_light">#FFB734</color>
+    <color name="amber_dark">#FFAE1B</color>
+    <color name="amber_shadow">#FFA501</color>
+
+    <color name="violet_light">#A25DE1</color>
+    <color name="violet_dark">#8932D9</color>
+    <color name="violet_shadow">#7D26CC</color>
+
+    <color name="navy_light">#26CB7D</color>
+    <color name="navy_dark">#1EA163</color>
+    <color name="navy_shadow">#1A8B56</color>
+
+    <color name="onquiz">#FF4D4D</color>
+    <color name="onquiz1">#FFB734</color>
+    <color name="onquiz2">#31D98A</color>
+
+    <color name="actionBarColor">#FF3D00</color>
+    <color name="actionBarColor2">#691A99</color>
+    <color name="actionBarColor3">#7A1EA1</color>
+
+    <color name="indicator">#18FFFF</color>
+
+    <color name="bkg">#587058</color>
+    <color name="activ">#424242</color>
+    <color name="inactiv">#f1f1f1</color>
+    <color name="bkg2">#3D4935</color>
+
+    <color name="backgroundclr">#A7FFEB</color>
+
+    <color name="accent_light">#68EFAD</color>
+    <color name="accent_dark">#3AEA94</color>
+    <color name="accent_shadow">#23E887</color>
+
+    <color name="toolbar_title">#ffffff</color>
+    <color name="primary">#7A1EA1</color>
+    <color name="primary_dark">#00564E</color>
+    <color name="accent">#FFB734</color>
+    <color name="control_normal">#888888</color>
+    <color name="fab_pressed">#FFA501</color>
+
+    <!-- Screens background color-->
+    <color name="bg_screen1">#f64c73</color>
+    <color name="bg_screen2">#20d2bb</color>
+    <color name="bg_screen3">#3395ff</color>
+    <color name="bg_screen4">#c873f4</color>
+    <color name="bg_screen5">#FF6D00</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#d1395c</color>
+    <color name="dot_dark_screen2">#14a895</color>
+    <color name="dot_dark_screen3">#2278d4</color>
+    <color name="dot_dark_screen4">#a854d4</color>
+    <color name="dot_dark_screen5">#FF9100</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#f98da5</color>
+    <color name="dot_light_screen2">#8cf9eb</color>
+    <color name="dot_light_screen3">#93c6fd</color>
+    <color name="dot_light_screen4">#e4b5fc</color>
+    <color name="dot_light_screen5">#FFAB40</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+        <item>@color/dot_light_screen5</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+        <item>@color/dot_dark_screen5</item>
+    </array>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_main"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_assessment"
+            android:icon="@drawable/ic_assessment_48dp"
+            android:title="Assessment" />
+        <item
+            android:id="@+id/nav_counseling"
+            android:icon="@drawable/ic_counseling_48dp"
+            android:title="Counseling" />
+        <item
+            android:id="@+id/nav_categories"
+            android:icon="@drawable/ic_quotes_48dp"
+            android:title="Categories" />
+
+    </group>
+
+    <item android:title="Other">
+        <menu>
+            <item
+                android:id="@+id/nav_glossary"
+                android:icon="@drawable/ic_categories_48dp"
+                android:title="Glossary" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about_48dp"
+                android:title="About" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_exit_48dp"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>
