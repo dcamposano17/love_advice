@@ -2,12 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dioncamposano17.loveadvice20">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+        android:name=".AppController"
         android:allowBackup="true"
         android:icon="@drawable/la_logo"
         android:label="@string/app_name"
@@ -33,7 +38,71 @@
         <activity
             android:name=".RegisterActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".WelcomeActivity"></activity>
+
+        <activity android:name=".WelcomeActivity" />
+
+        <activity
+            android:name=".util.AlarmMe"
+            android:label="@string/remind" />
+        <activity
+            android:name=".util.EditAlarm"
+            android:label="Edit alarm" />
+        <activity
+            android:name=".util.AlarmNotification"
+            android:label="Alarm notification" />
+        <activity android:name=".util.Preferences">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".util.AlarmReceiver"
+            android:process=":remote" />
+
+        <receiver android:name=".util.BootCompletedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".quiz.QuizActivity" />
+        <activity android:name=".quiz.ResultActivity" />
+        <activity android:name=".quiz.Splash" />
+        <activity android:name=".quiz.Options" />
+
+        <activity android:name=".reminder.preferences.AlarmPreferencesActivity"
+            android:parentActivityName=".reminder.AlarmActivity"
+            android:theme="@style/Theme.AppCompat"
+            android:label="@string/remind" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".reminder.AlarmActivity" />
+        </activity>
+        <activity android:name=".reminder.AlarmActivity"
+            android:label="@string/remind" />
+        <activity android:name=".reminder.alert.AlarmAlertActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <service
+            android:name=".reminder.service.AlarmService"
+            android:icon="@drawable/la_logo">
+        </service>
+
+        <receiver android:name=".reminder.alert.AlarmAlertBroadcastReciever" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name = ".reminder.telephony.PhoneStateChangedBroadcastReciever">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

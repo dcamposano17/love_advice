@@ -10,6 +10,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.example.dioncamposano17.loveadvice20.util.AlarmMe;
+
 public class SplashActivity extends AppCompatActivity {
 
     Thread splashThread;

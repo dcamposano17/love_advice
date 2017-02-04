@@ -24,6 +24,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.volley.toolbox.StringRequest;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -88,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
         stud_no = sharedPreferences.getString("stud_no", DEFAULT);
         middlename = sharedPreferences.getString("middlename", DEFAULT);
 
-        if(!stud_no.equals(DEFAULT) || !middlename.equals(DEFAULT)){
+        if (!stud_no.equals(DEFAULT) || !middlename.equals(DEFAULT)) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
         }
@@ -117,44 +119,44 @@ public class LoginActivity extends AppCompatActivity {
         showDialog();
     }
 
-    public void showDialog(){
+    public void showDialog() {
         WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
         manager = getFragmentManager();
         WifiManagerClass wifiManagerClass = new WifiManagerClass();
 
-        if(!wifi.isWifiEnabled()){
-            if(wifiManagerClass == null)
+        if (!wifi.isWifiEnabled()) {
+            if (wifiManagerClass == null)
                 wifiManagerClass.show(manager, "WifiManager");
         }
     }
 
-    private void submitForm(){
+    private void submitForm() {
 
         String getUser = inputUsername.getText().toString().trim();
         String getPass = inputPassword.getText().toString().trim();
 
         String method = "login";
-        BackGroundTask backGroundTask = new BackGroundTask(this);
+        //BackGroundTask backGroundTask = new BackGroundTask(this);
 
-        if(!validateUsername()){
-            if (getUser.length() == 0){
+        if (!validateUsername()) {
+            if (getUser.length() == 0) {
                 inputUsername.setError("student number is required");
             }
             return;
-        }
-        else if(!validatePassword()){
-            if (getPass.length() == 0){
+        } else if (!validatePassword()) {
+            if (getPass.length() == 0) {
                 inputPassword.setError("password is required");
             }
             return;
         } else {
             String finalUser = getUser.replaceAll("-", "");
-            backGroundTask.execute(method, finalUser, getPass);
+            onStudentLogin(finalUser, getPass);
+            //backGroundTask.execute(method, finalUser, getPass);
         }
     }
 
-    private boolean validateUsername(){
-        if (inputUsername.getText().toString().trim().isEmpty()){
+    private boolean validateUsername() {
+        if (inputUsername.getText().toString().trim().isEmpty()) {
             inputLayoutUser.setError(getString(R.string.err_msg_user));
             requestFocus(inputUsername);
             return false;
@@ -163,8 +165,9 @@ public class LoginActivity extends AppCompatActivity {
         }
         return true;
     }
-    private boolean validatePassword(){
-        if (inputPassword.getText().toString().trim().isEmpty()){
+
+    private boolean validatePassword() {
+        if (inputPassword.getText().toString().trim().isEmpty()) {
             inputLayoutPass.setError(getString(R.string.err_msg_pass));
             requestFocus(inputPassword);
             return false;
@@ -173,8 +176,9 @@ public class LoginActivity extends AppCompatActivity {
         }
         return true;
     }
-    private void requestFocus(View view){
-        if(view.requestFocus()){
+
+    private void requestFocus(View view) {
+        if (view.requestFocus()) {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         }
     }
@@ -210,15 +214,18 @@ public class LoginActivity extends AppCompatActivity {
     private class MyTextWatcher implements TextWatcher {
         private View view;
 
-        private MyTextWatcher(View view){
+        private MyTextWatcher(View view) {
             this.view = view;
         }
+
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
         }
+
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
         }
+
         @Override
         public void afterTextChanged(Editable editable) {
 
@@ -232,14 +239,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
-    public void onClick(View v){
-        if (v.getId() == R.id.imageEye){
+
+    public void onClick(View v) {
+        if (v.getId() == R.id.imageEye) {
             if (imageEyeOff.getVisibility() == View.GONE) {
                 imageEyeOff.setVisibility(View.VISIBLE);
                 imageEye.setVisibility(View.GONE);
                 inputPassword.setInputType(InputType.TYPE_CLASS_TEXT);
             }
-        } else if (v.getId() == R.id.imageEyeOff){
+        } else if (v.getId() == R.id.imageEyeOff) {
             if (imageEye.getVisibility() == View.GONE) {
                 imageEyeOff.setVisibility(View.GONE);
                 imageEye.setVisibility(View.VISIBLE);
@@ -247,6 +255,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -273,6 +282,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
     public void AppExit() {
         this.finish();
         Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -281,121 +291,39 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public class BackGroundTask extends AsyncTask<String, Void, String>{
-        Context context;
-        AlertDialog alertDialog;
-        Dialog loadingDialog;
+    private void onStudentLogin(String username, String password) {
+        new VolleyRequest(LoginActivity.this, "login_student.php", "", "Logging in... Please Wait")
+                .onRequest(new Callback() {
+                               @Override
+                               public void onSuccess(String response) {
+                                   android.util.Log.e("onSuccess", response);
+                                   try {
+                                       JSONObject result = new JSONObject(response);
+                                       String status = result.getString("status");
+                                       if (status.equals("success")) {
+                                           Toast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_SHORT).show();
+                                           SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+                                           SharedPreferences.Editor editor = sharedPreferences.edit();
+                                           editor.putString("stud_no", result.getString("stud_no"));
+                                           editor.putString("name", result.getString("lastname") + ", " + result.getString("firstname") + " " + result.getString("middlename"));
+                                           editor.putString("program", result.getString("program"));
+                                           editor.putString("gender", result.getString("gender"));
+                                           editor.apply();
+                                           startActivity(new Intent(getApplicationContext(), MainActivity.class).putExtra("jsondata", status));
+                                       } else {
+                                           Toast.makeText(getApplicationContext(), "Invalid username or password!", Toast.LENGTH_SHORT).show();
+                                       }
 
-        BackGroundTask(Context context){
-            this.context = context;
-        }
+                                   } catch (JSONException e) {
+                                       e.printStackTrace();
+                                   }
+                               }
 
-        @Override
-        protected String doInBackground(String... voids) {
-
-            String method = voids[0];
-            String loginUrl = "http://192.168.43.245/LAfinal/login_student.php";
-
-            if(method.equals("login")){
-                String stud_no = voids[1];
-                String middlename = voids[2];
-
-                try {
-                    URL url = new URL(loginUrl);
-                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                    httpURLConnection.setRequestMethod("POST");
-                    httpURLConnection.setDoInput(true);
-                    httpURLConnection.setDoInput(true);
-                    OutputStream outputStream = httpURLConnection.getOutputStream();
-                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-
-                    String data = URLEncoder.encode("stud_no", "UTF-8") + "=" + URLEncoder.encode(stud_no, "UTF-8") + "&" +
-                            URLEncoder.encode("middlename", "UTF-8") + "=" + URLEncoder.encode(middlename, "UTF-8");
-
-                    bufferedWriter.write(data);
-                    bufferedWriter.flush();
-                    bufferedWriter.close();
-                    outputStream.close();
-
-                    InputStream inputStream = httpURLConnection.getInputStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
-                    String response = "";
-                    String line;
-                    while ((line = bufferedReader.readLine()) != null) {
-                        response += line + "\n";
-                    }
-                    bufferedReader.close();
-                    inputStream.close();
-                    httpURLConnection.disconnect();
-                    return response;
-                } catch (MalformedURLException e){
-                    e.printStackTrace();
-                } catch (IOException e){
-                    e.printStackTrace();
-                }
-            }
-            return null;
-        }
-        @Override
-        protected void onPostExecute(String result){
-            super.onPostExecute(result);
-
-            if(result == null){
-                loadingDialog.dismiss();
-
-                manager = getFragmentManager();
-                WifiManagerClass wifiManagerClass = new WifiManagerClass();
-                wifiManagerClass.show(manager, "WifiManager");
-
-            } else {
-                android.util.Log.e("result", result);
-
-                String status;
-
-                loadingDialog.dismiss();
-
-                try {
-                    JSONObject response = new JSONObject(result);
-
-                    status = response.getString("status");
-
-                    if(status.equals("success")) {
-                        Toast.makeText(context, "Login Successfully", Toast.LENGTH_SHORT).show();
-
-                        loadingDialog.dismiss();
-
-                        Intent i = new Intent(context, MainActivity.class);
-
-                        SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("stud_no", response.getString("stud_no"));
-                        editor.putString("name", response.getString("lastname") + " " + response.getString("firstname") + " " + response.getString("middlename"));
-                        editor.putString("program", response.getString("program"));
-                        editor.putString("gender", response.getString("gender"));
-                        editor.apply();
-                        i.putExtra("jsondata", result);
-
-                        context.startActivity(i);
-                    } else {
-                        alertDialog = new AlertDialog.Builder(context).create();
-
-                        String a = "Incorrect student number or password. Please try again.";
-                        alertDialog.setMessage(a);
-                        alertDialog.show();
-                    }
-                } catch (JSONException e){
-                    e.printStackTrace();
-                }
-            }
-        }
-        @Override
-        protected void onPreExecute(){
-            super.onPreExecute();
-            loadingDialog = ProgressDialog.show(context, "", "Loading... Please Wait");
-        }
-        @Override
-        protected void onProgressUpdate(Void... values){
-            super.onProgressUpdate(values);
-        }
+                               @Override
+                               public void onError(String response) {
+                                   android.util.Log.e("onError", response);
+                               }
+                           }, new String[]{"stud_no", "middlename"},
+                        new String[]{username, password}, true);
     }
 }

@@ -18,9 +18,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.eftimoff.viewpagertransformers.AccordionTransformer;
 import com.example.dioncamposano17.loveadvice20.model.PrefManager;
 
-public class WelcomeActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity  {
 
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
@@ -62,6 +63,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         myViewPagerAdapter = new MyViewPagerAdapter();
         viewPager.setAdapter(myViewPagerAdapter);
+        viewPager.setPageTransformer(true, new AccordionTransformer());
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
         btnSkip.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +76,7 @@ public class WelcomeActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 int current = getItem(+1);
                 if (current < layouts.length){
                     viewPager.setCurrentItem(current);

@@ -7,6 +7,10 @@
             android:icon="@drawable/ic_home_main"
             android:title="Home" />
         <item
+            android:id="@+id/nav_reminder"
+            android:icon="@drawable/ic_todo_list"
+            android:title="Reminders" />
+        <item
             android:id="@+id/nav_assessment"
             android:icon="@drawable/ic_assessment_48dp"
             android:title="Assessment" />
@@ -18,7 +22,6 @@
             android:id="@+id/nav_categories"
             android:icon="@drawable/ic_quotes_48dp"
             android:title="Categories" />
-
     </group>
 
     <item android:title="Other">
@@ -34,7 +37,7 @@
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_exit_48dp"
-                android:title="Logout" />
+                android:title="Sign out" />
         </menu>
     </item>
 

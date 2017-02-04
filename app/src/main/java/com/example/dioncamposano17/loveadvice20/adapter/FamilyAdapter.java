@@ -42,7 +42,7 @@ public class FamilyAdapter extends RecyclerView.Adapter<FamilyAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        YoYo.with(Techniques.RubberBand).playOn(holder.cardView);
+        YoYo.with(Techniques.Pulse).playOn(holder.cardView);
         Family family = familyList.get(position);
         holder.familyItem.setText(Html.fromHtml(family.getFamilyList()));
     }

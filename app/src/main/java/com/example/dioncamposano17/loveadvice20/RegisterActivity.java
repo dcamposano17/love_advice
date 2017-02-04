@@ -1,110 +1,79 @@
 package com.example.dioncamposano17.loveadvice20;
 
-import android.app.Dialog;
 import android.app.FragmentManager;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.wifi.WifiManager;
-import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class RegisterActivity extends AppCompatActivity {
 
     Button btnReg;
     FragmentManager manager;
-    EditText studno,lname,fname,mname,program,gender;
-    TextInputLayout inputLayoutStudno,inputLayoutLname,inputLayoutFname,inputLayoutMname,inputLayoutProg,inputLayoutGender;
-    SaveInformation saveInformation;
+    EditText studno, lname, fname, mname, program;
+    TextInputLayout inputLayoutStudno, inputLayoutLname, inputLayoutFname, inputLayoutMname, inputLayoutProg, inputLayoutGender;
+    RadioGroup radioG, radioG2;
+    RadioButton radioM, radioF, radioStem, radioMawd, radioDigar;
+    private String gender2, prog2 = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        btnReg = (Button)findViewById(R.id.btnReg);
-        studno = (EditText)findViewById(R.id.input_studno);
-        lname = (EditText)findViewById(R.id.input_lastname);
-        fname = (EditText)findViewById(R.id.input_firstname);
-        mname = (EditText)findViewById(R.id.input_middlename);
-        program = (EditText)findViewById(R.id.input_program);
-        gender = (EditText)findViewById(R.id.input_gender);
-        inputLayoutStudno = (TextInputLayout)findViewById(R.id.input_layout_studno);
-        inputLayoutLname = (TextInputLayout)findViewById(R.id.input_layout_lastname);
-        inputLayoutFname = (TextInputLayout)findViewById(R.id.input_layout_firstname);
-        inputLayoutMname = (TextInputLayout)findViewById(R.id.input_layout_middlename);
-        inputLayoutProg = (TextInputLayout)findViewById(R.id.input_layout_program);
-        inputLayoutGender = (TextInputLayout)findViewById(R.id.input_layout_gender);
-        saveInformation = new SaveInformation(this);
+        btnReg = (Button) findViewById(R.id.btnReg);
+        studno = (EditText) findViewById(R.id.input_studno);
+        lname = (EditText) findViewById(R.id.input_lastname);
+        fname = (EditText) findViewById(R.id.input_firstname);
+        mname = (EditText) findViewById(R.id.input_middlename);
+        radioG = (RadioGroup) findViewById(R.id.radioG);
+        radioG2 = (RadioGroup) findViewById(R.id.radioG2);
+        radioM = (RadioButton) findViewById(R.id.radioMale);
+        radioF = (RadioButton) findViewById(R.id.radioFemale);
+        radioMawd = (RadioButton) findViewById(R.id.radioMawd);
+        radioStem = (RadioButton) findViewById(R.id.radioStem);
+        radioDigar = (RadioButton) findViewById(R.id.radioDigar);
+        inputLayoutStudno = (TextInputLayout) findViewById(R.id.input_layout_studno);
+        inputLayoutLname = (TextInputLayout) findViewById(R.id.input_layout_lastname);
+        inputLayoutFname = (TextInputLayout) findViewById(R.id.input_layout_firstname);
+        inputLayoutMname = (TextInputLayout) findViewById(R.id.input_layout_middlename);
         clickRegisterListener();
+
+        radioG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int id) {
+                RadioButton radioButton = (RadioButton) findViewById(id);
+                gender2 = radioButton.getText().toString();
+            }
+        });
+        radioG2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int id) {
+                RadioButton radioButton = (RadioButton) findViewById(id);
+                prog2 = radioButton.getText().toString();
+            }
+        });
     }
 
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         showDialog();
     }
-
-//    public void onClick(View v) {
-//        String getStudno = studno.getText().toString().trim();
-//        String getLname = lname.getText().toString().trim();
-//        String getFname = fname.getText().toString().trim();
-//        String getMname = mname.getText().toString().trim();
-//        String getProg = program.getText().toString().trim();
-//        String getGender = gender.getText().toString().trim();
-//        if (v == btnReg) {
-//            if (getStudno.length() == 0 && getLname.length() == 0 && getFname.length() == 0 && getMname.length() == 0 && getProg.length() == 0 && getGender.length() == 0) {
-//                studno.setError("Student Number is required!");
-//                lname.setError("Last name is required!");
-//                fname.setError("First name is required!");
-//                mname.setError("Middle name is required!");
-//                program.setError("Program is required!");
-//                gender.setError("Gender is required!");
-//                Toast.makeText(getApplicationContext(), "All fields are required", Toast.LENGTH_SHORT).show();
-//            } else if (getStudno.length() == 0) {
-//                studno.setError("Student Number is required!");
-//            } else if (getLname.length() == 0) {
-//                lname.setError("Last name is required!");
-//            } else if (getFname.length() == 0) {
-//                fname.setError("First name is required!");
-//            } else if (getMname.length() == 0) {
-//                mname.setError("Middle name is required!");
-//            } else if (getProg.length() == 0) {
-//                program.setError("Program is required!");
-//            } else if (getGender.length() == 0) {
-//                gender.setError("Gender is required!");
-//            }
-//        } else {
-//            saveInformation.execute("login",
-//                    studno.getText().toString(), lname.getText().toString(),
-//                    fname.getText().toString(), mname.getText().toString(),
-//                    program.getText().toString(), gender.getText().toString());
-//            Toast.makeText(getApplicationContext(), "Successfully Registered!", Toast.LENGTH_SHORT).show();
-//            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-//        }
-//    }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -148,7 +117,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
     }
-    private void clickRegisterListener(){
+
+    private void clickRegisterListener() {
         btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,15 +126,11 @@ public class RegisterActivity extends AppCompatActivity {
                 String getLname = lname.getText().toString().trim();
                 String getFname = fname.getText().toString().trim();
                 String getMname = mname.getText().toString().trim();
-                String getProg = program.getText().toString().trim();
-                String getGender = gender.getText().toString().trim();
-                if (getStudno.length() == 0 && getLname.length() == 0 && getFname.length() == 0 && getMname.length() == 0 && getProg.length() == 0 && getGender.length() == 0) {
+                if (getStudno.length() == 0 && getLname.length() == 0 && getFname.length() == 0 && getMname.length() == 0 && prog2.equalsIgnoreCase("") && gender2.equalsIgnoreCase("")) {
                     studno.setError("Student Number is required!");
                     lname.setError("Last name is required!");
                     fname.setError("First name is required!");
                     mname.setError("Middle name is required!");
-                    program.setError("Program is required!");
-                    gender.setError("Gender is required!");
                     Toast.makeText(getApplicationContext(), "All fields are required", Toast.LENGTH_SHORT).show();
                 } else if (getStudno.length() == 0) {
                     studno.setError("Student Number is required!");
@@ -174,112 +140,37 @@ public class RegisterActivity extends AppCompatActivity {
                     fname.setError("First name is required!");
                 } else if (getMname.length() == 0) {
                     mname.setError("Middle name is required!");
-                } else if (getProg.length() == 0) {
-                    program.setError("Program is required!");
-                } else if (getGender.length() == 0) {
-                    gender.setError("Gender is required!");
+                } else if (prog2.equalsIgnoreCase("") && gender2.equalsIgnoreCase("")) {
+                    Toast.makeText(getApplicationContext(), "These fields are required!", Toast.LENGTH_SHORT).show();
                 } else {
-                    saveInformation.execute("login",
-                            studno.getText().toString(), lname.getText().toString(),
-                            fname.getText().toString(), mname.getText().toString(),
-                            program.getText().toString(), gender.getText().toString());
-                    Toast.makeText(getApplicationContext(), "Successfully Registered!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    onRegisterStudent(getStudno, getLname, getFname, getMname, gender2, prog2);
                 }
             }
         });
     }
-    public class SaveInformation extends AsyncTask<String, Void, String> {
-        Context context;
-        Dialog dialog;
-        String stud_no, lastname, firstname, middlename, program, gender;
 
-        SaveInformation(Context context){
-            this.context = context;
-        }
+    private void onRegisterStudent(String stud_no, String lastname, String firstname, String middlename, String program, String gender) {
+        new VolleyRequest(RegisterActivity.this, "insert_student.php", "", "Inserting Data... Please Wait")
+                .onRequest(new Callback() {
+                               @Override
+                               public void onSuccess(String response) {
+                                   android.util.Log.wtf("onSuccess", response);
+                                   try {
+                                       JSONObject jsonObject = new JSONObject(response);
+                                       if (jsonObject.getString("success").equalsIgnoreCase("success")) {
+                                           Toast.makeText(getApplicationContext(), "Registered Successfully!", Toast.LENGTH_SHORT).show();
+                                           startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                                       }
+                                   } catch (JSONException e) {
+                                       e.printStackTrace();
+                                   }
+                               }
 
-        @Override
-        protected String doInBackground(String... voids) {
-            String method = voids[0];
-
-            String loginUrl = "http://192.168.43.245/LAfinal/insertStudents.php";
-
-            if(method.equals("login")){
-                stud_no = voids[1];
-                lastname = voids[2];
-                firstname = voids[3];
-                middlename = voids[4];
-                program = voids[5];
-                gender = voids[6];
-
-                try {
-                    URL url = new URL(loginUrl);
-                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-                    httpURLConnection.setRequestMethod("POST");
-                    httpURLConnection.setDoInput(true);
-                    httpURLConnection.setDoInput(true);
-                    OutputStream outputStream = httpURLConnection.getOutputStream();
-                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-
-                    String data = URLEncoder.encode("stud_no", "UTF-8") + "=" + URLEncoder.encode(stud_no, "UTF-8")
-                            + "&" +
-                            URLEncoder.encode("lastname", "UTF-8") + "=" + URLEncoder.encode(lastname, "UTF-8")
-                            + "&" +
-                            URLEncoder.encode("firstname", "UTF-8") + "=" + URLEncoder.encode(firstname, "UTF-8")
-                            + "&" +
-                            URLEncoder.encode("middlename", "UTF-8") + "=" + URLEncoder.encode(middlename, "UTF-8")
-                            + "&" +
-                            URLEncoder.encode("program", "UTF-8") + "=" + URLEncoder.encode(program, "UTF-8")
-                            + "&" +
-                            URLEncoder.encode("gender", "UTF-8") + "=" + URLEncoder.encode(gender, "UTF-8");
-
-                    bufferedWriter.write(data);
-                    bufferedWriter.flush();
-                    bufferedWriter.close();
-                    outputStream.close();
-
-                    InputStream inputStream = httpURLConnection.getInputStream();
-                    BufferedReader bufferReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
-                    String response = "";
-                    String line;
-                    while ((line = bufferReader.readLine()) != null) {
-                        response += line + "\n";
-                    }
-                    bufferReader.close();
-                    inputStream.close();
-                    httpURLConnection.disconnect();
-                    return response;
-                } catch (MalformedURLException e){
-                    e.printStackTrace();
-                } catch (IOException e){
-                    e.printStackTrace();
-                }
-            }
-            return  null;
-        }
-        @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-            dialog.dismiss();
-
-            if (result == null) {
-
-                manager = getFragmentManager();
-                WifiManagerClass wifiManagerClass = new WifiManagerClass();
-                wifiManagerClass.show(manager, "WifiManager");
-
-            } else {
-                android.util.Log.e("result", result);
-            }
-        }
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            dialog = ProgressDialog.show(context, "", "Registering... Please Wait");
-        }
-        @Override
-        protected void onProgressUpdate(Void... values) {
-            super.onProgressUpdate(values);
-        }
+                               @Override
+                               public void onError(String response) {
+                                   android.util.Log.e("onError", response);
+                               }
+                           }, new String[]{"stud_no", "lastname", "firstname", "middlename", "program", "gender"},
+                        new String[]{stud_no, lastname, firstname, middlename, program, gender}, true);
     }
 }

@@ -8,8 +8,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.view.KeyEvent;
 import android.view.View;
@@ -24,7 +22,13 @@ import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.dioncamposano17.loveadvice20.quiz.QuizActivity;
+import com.example.dioncamposano17.loveadvice20.quiz.Splash;
+import com.example.dioncamposano17.loveadvice20.reminder.AlarmActivity;
+import com.example.dioncamposano17.loveadvice20.util.AlarmMe;
 import com.example.dioncamposano17.loveadvice20.fragments.AboutFragment;
 import com.example.dioncamposano17.loveadvice20.fragments.CategoriesFragment;
 import com.example.dioncamposano17.loveadvice20.fragments.GlossaryFragment;
@@ -40,6 +44,12 @@ public class MainActivity extends AppCompatActivity
     FragmentTransaction fragmentTransaction;
     DrawerLayout drawerLayout;
     public static Toolbar toolbar;
+    NavigationView navigationView;
+    private View navHeader;
+    private TextView stud_name, stud_prog, stud_no;
+    private static final String DEFAULT = "N/A";
+    SharedPreferences sharedPreferences;
+    private final int PREFERENCES_ACTIVITY = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +60,17 @@ public class MainActivity extends AppCompatActivity
         quotesOfTheDay();
         getSupportFragmentManager().beginTransaction().replace(R.id.main_container, new HomeFragment()).commit();
         main_page = (FrameLayout)findViewById(R.id.main_container);
-
-
+        navigationView = (NavigationView)findViewById(R.id.nav_view);
+        sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        navHeader = navigationView.inflateHeaderView(R.layout.nav_header_main);
+        stud_prog = (TextView) navHeader.findViewById(R.id.stud_program);
+        stud_name = (TextView) navHeader.findViewById(R.id.stud_name);
+        stud_no = (TextView) navHeader.findViewById(R.id.stud_no);
+        stud_name.setText(sharedPreferences.getString("name", DEFAULT));
+        stud_no.setText(sharedPreferences.getString("stud_no", DEFAULT));
+        stud_prog.setText(sharedPreferences.getString("program", DEFAULT));
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.setDrawerListener(toggle);
@@ -72,7 +90,7 @@ public class MainActivity extends AppCompatActivity
                 .setMessage(listOfQuotes[random.nextInt(37)])
                 .setIcon(R.drawable.love_letter)
                 .setCancelable(false)
-                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Got It", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();
@@ -133,7 +151,6 @@ public class MainActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -178,6 +195,15 @@ public class MainActivity extends AppCompatActivity
                 setGlossaryAnim();
                 toolbar.setTitle(getString(R.string.Glossary));
                 break;
+            case R.id.nav_reminder:
+                startActivity(new Intent(getApplicationContext(), AlarmMe.class));
+                finish();
+                break;
+            case R.id.nav_assessment:
+                startActivity(new Intent(getApplicationContext(), Splash.class));
+                Toast.makeText(getApplicationContext(), "Good luck in your assessment!", Toast.LENGTH_SHORT).show();
+                finish();
+                break;
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -189,7 +215,7 @@ public class MainActivity extends AppCompatActivity
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Exit Main")
                     .setIcon(R.drawable.ic_cancel_black_36dp)
-                    .setMessage("Do you really want to logout?")
+                    .setMessage("Do you really want to sign out?")
                     .setPositiveButton("Leave", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {

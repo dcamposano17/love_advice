@@ -41,7 +41,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        YoYo.with(Techniques.Tada).playOn(holder.cardView);
+        YoYo.with(Techniques.Pulse).playOn(holder.cardView);
         Friends friends = friendList.get(position);
         holder.friendItem.setText(Html.fromHtml(friends.getFriendsList()));
     }

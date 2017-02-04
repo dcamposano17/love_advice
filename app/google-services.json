@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "302836637890",
+    "firebase_url": "https://love-advice.firebaseio.com",
+    "project_id": "love-advice",
+    "storage_bucket": "love-advice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302836637890:android:23b98b35442836e7",
+        "android_client_info": {
+          "package_name": "com.example.dioncamposano17.loveadvice20"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302836637890-knupivg548sv5oi8kjk2pv70lkd56n3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC22qne4XjD74WTi0kdxYpfoknfnNGDk4Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
