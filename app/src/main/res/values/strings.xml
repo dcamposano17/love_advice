@@ -79,9 +79,9 @@
 
     <string name="about">
         This Love Advice Android Application
-        is developed by our IT Project team
+        crafted with love by our IT Project team
         for the Senior High Students of
-        STI Academic Center Caloocan and also
+        STI Academic Center Caloocan taking up programs MAWD, STEM and DIGAR and also
         a requirements for IT Special Project.
     </string>
     <string-array name="FamilyCategory">
@@ -284,5 +284,32 @@
     <string name="button_delete">Delete</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+
+    <string name="title_activity_quiz">Quiz Questions</string>
+    <string name="question">Question 1. How is the first president of Nigeria?</string>
+    <string name="answer_one">King Ade</string>
+    <string name="answer_two"> olu Obasanjo</string>
+    <string name="answer_three">Jona Goodluck</string>
+    <string name="answer_four"> Atiku Abubakar</string>
+    <string name="next_questions"> Next Question</string>
+    <string name="previous_questions"> Previous Question</string>
+
+    <string name="FamilyAdviceHigh">Continue this kind of relationship with your family. It brings you joy and satisfaction in life.</string>
+    <string name="FamilyAdviceMod">If you have problem with your family, try to talk it out with them and work through the situation. Your family needs you much as you need them.</string>
+    <string name="FamilyAdviceLow">Try to put yourself in their shoes. Why are they doing the things they are doing? If you will try to be more empathic, you will probably understand their side. Talk to them, establish close relationship with them. They are probably the best person you will ever be with.</string>
+
+    <string name="FriendsAdviceHigh">You clearly understand that no man is an island and your interpersonal skills are in its best. Continue with how you interact with your friends and spend more fun moments with them.</string>
+    <string name="FriendsAdviceMod">You are a little distant to other people sometimes but you can get along well with them if you want to. Be a little more confident and know that your friends think you are awesome. Try spending time with them and try to be there for each other.</string>
+    <string name="FriendsAdviceLow">Remember, no man is an island. You need other people to make life more colorful. Choose your friends well. Choose those people who will not let you down or force you to do bad thing.</string>
+
+    <string name="SpecialAdviceHigh">Congratulations you have learned what love is. Continue being a good partner. Love each other every day. Your relationship might last a lifetime if you will both work through every trial.</string>
+    <string name="SpecialAdviceMod">You can do better than this. Your view in love may not be that good but know that the true love exist. Improve yourself more so that you will become a better partner. If you will become a better partner, chances are that you will find a better partner too. You can do it!</string>
+    <string name="SpecialAdviceLow">Reflect on yourself. Are you ready to have a relationship? Do you want one now? If you know you are not ready yet, know that there is nothing wrong with being single. You might want to improve yourself more before you commit yourself to a relationship.</string>
+
+    <string name="GeneralAdvice5">"Get Help" - you may not always be able to solve your problems yourself so you may need some external help.</string>
+    <string name="GeneralAdvice4">"Make a plan" - it can help reduce stress and give common goals to work towards. For example if you are having financial problems it can help to create a budget.</string>
+    <string name="GeneralAdvice3">"Have fun together" - even when things are tough, it is important to find the time to have fun with your family or loved ones.</string>
+    <string name="GeneralAdvice2">"Accept your differences" - it can help avoid unnecessary conflict if you can recognise that people have different ideas, opinions and beliefs and you may not always be in agreement.</string>
+    <string name="GeneralAdvice1">"Talk" - communication is the key and often the first step to finding solutions. Be calm and honest about your concerns when discussing your problems with family or loved one.</string>
 
 </resources>

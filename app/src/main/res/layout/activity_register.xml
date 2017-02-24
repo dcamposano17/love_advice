@@ -27,7 +27,6 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:hint="@string/lname"
-                android:text="Camposano"
                 android:inputType="text|textPersonName|textCapWords"
                 android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "/>
         </android.support.design.widget.TextInputLayout>
@@ -53,7 +52,6 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:hint="@string/fname"
-            android:text="Dion"
             android:inputType="text|textPersonName|textCapWords"
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "/>
     </android.support.design.widget.TextInputLayout>
@@ -82,7 +80,6 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:hint="@string/mname"
-                android:text="Agno"
                 android:inputType="text|textPersonName|textCapWords"
                 android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "/>
         </android.support.design.widget.TextInputLayout>
@@ -170,6 +167,9 @@
                 <!--android:inputType="text"-->
                 <!--android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "/>-->
         <!--</android.support.design.widget.TextInputLayout>-->
+
+
+
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -219,7 +219,6 @@
                 android:singleLine="true"
                 android:hint="@string/studno"
                 android:inputType="numberDecimal|number"
-                android:text="00820161234"
                 android:digits="0123456789 "/>
         </android.support.design.widget.TextInputLayout>
 

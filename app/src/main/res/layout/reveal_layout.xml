@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.dioncamposano17.loveadvice20.RevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/reveal_layout"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="This Mobile Application is aims to give you a general understanding of how the Computer Works"
+        android:background="#0099cc"
+        android:gravity="center"
+        android:textSize="32sp"
+        android:textColor="#FFF"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="in a convenient way this Mobile Learning application is serve as a supplementary tool for Computer Fundamentals"
+        android:background="#aa66cc"
+        android:gravity="center"
+        android:textSize="32sp"
+        android:textColor="#FFF"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="And lastly, enjoy it!"
+        android:background="#C58917"
+        android:gravity="center"
+        android:textSize="32sp"
+        android:textColor="#FFF"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Welcome to Mobile Learning for Computer Fundamentals"
+        android:background="#008080"
+        android:gravity="center"
+        android:textSize="32sp"
+        android:textColor="#FFF"
+        />
+</com.example.dioncamposano17.loveadvice20.RevealLayout>

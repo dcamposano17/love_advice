@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_quiz2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.dioncamposano17.loveadvice20.assessment.QuizActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/txt_num_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Loading..."
+            android:textColor="#000"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txt_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading question..."
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/rdo_grp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rdo_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@animator/gradientnavy"
+                android:text="Loading choices..."
+                android:textColor="#FFF"
+                android:theme="@style/RadioColor" />
+
+            <RadioButton
+                android:id="@+id/rdo_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@animator/gradientnavy"
+                android:text="Loading choices..."
+                android:textColor="#FFF"
+                android:theme="@style/RadioColor" />
+
+            <RadioButton
+                android:id="@+id/rdo_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@animator/gradientnavy"
+                android:text="Loading choices..."
+                android:textColor="#FFF"
+                android:theme="@style/RadioColor" />
+
+            <RadioButton
+                android:id="@+id/rdo_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@animator/gradientnavy"
+                android:text="Loading choices..."
+                android:textColor="#FFF"
+                android:theme="@style/RadioColor" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@animator/purplebutton"
+            android:gravity="center"
+            android:text="next"
+            android:textColor="@color/foreColor"
+            android:textSize="15.0sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

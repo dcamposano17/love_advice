@@ -7,13 +7,16 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.dioncamposano17.loveadvice20.MainActivity;
 import com.example.dioncamposano17.loveadvice20.R;
+import com.example.dioncamposano17.loveadvice20.RevealLayout;
 import com.example.dioncamposano17.loveadvice20.WifiManagerClass;
 
 import java.util.Locale;
@@ -24,6 +27,7 @@ public class AboutFragment extends Fragment {
     public static TextToSpeech textToSpeech;
     FragmentManager manager;
     Thread thread;
+    private RevealLayout revealLayout;
 
 
     public AboutFragment() {
@@ -70,6 +74,8 @@ public class AboutFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_about, container, false);
+        revealLayout = (RevealLayout)view.findViewById(R.id.reveal_layout);
+        initRevealLayout();
         return view;
     }
 
@@ -119,6 +125,20 @@ public class AboutFragment extends Fragment {
         };
 
         thread.start();
+    }
+    private void initRevealLayout(){
+
+        revealLayout.setOnClickListener(null);
+        revealLayout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+                    Log.d("AboutFragment", "x: " + event.getX() + ", y: " + event.getY());
+                    revealLayout.next((int) event.getX(), (int) event.getY());
+                }
+                return false;
+            }
+        });
     }
 
 

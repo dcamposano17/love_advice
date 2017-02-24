@@ -14,10 +14,10 @@
             android:id="@+id/nav_assessment"
             android:icon="@drawable/ic_assessment_48dp"
             android:title="Assessment" />
-        <item
-            android:id="@+id/nav_counseling"
-            android:icon="@drawable/ic_counseling_48dp"
-            android:title="Counseling" />
+        <!--<item-->
+            <!--android:id="@+id/nav_counseling"-->
+            <!--android:icon="@drawable/ic_counseling_48dp"-->
+            <!--android:title="Counseling" />-->
         <item
             android:id="@+id/nav_categories"
             android:icon="@drawable/ic_quotes_48dp"

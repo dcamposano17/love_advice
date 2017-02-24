@@ -2,14 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dioncamposano17.loveadvice20">
 
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
     <application
         android:name=".AppController"
@@ -23,13 +24,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
@@ -38,19 +33,33 @@
         <activity
             android:name=".RegisterActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:screenOrientation="portrait">
 
-        <activity android:name=".WelcomeActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
 
         <activity
             android:name=".util.AlarmMe"
             android:label="@string/remind" />
         <activity
             android:name=".util.EditAlarm"
-            android:label="Edit alarm" />
+            android:label="Edit alarm"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".util.AlarmNotification"
-            android:label="Alarm notification" />
-        <activity android:name=".util.Preferences">
+            android:label="Alarm notification"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".util.Preferences"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -59,50 +68,67 @@
         <receiver
             android:name=".util.AlarmReceiver"
             android:process=":remote" />
-
         <receiver android:name=".util.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
-        <activity android:name=".quiz.QuizActivity" />
-        <activity android:name=".quiz.ResultActivity" />
-        <activity android:name=".quiz.Splash" />
-        <activity android:name=".quiz.Options" />
+        <activity
+            android:name=".quiz.QuizActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".quiz.ResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".quiz.Splash"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".quiz.Options"
+            android:screenOrientation="portrait">
 
-        <activity android:name=".reminder.preferences.AlarmPreferencesActivity"
+        </activity>
+        <activity
+            android:name=".reminder.preferences.AlarmPreferencesActivity"
+            android:label="@string/remind"
             android:parentActivityName=".reminder.AlarmActivity"
-            android:theme="@style/Theme.AppCompat"
-            android:label="@string/remind" >
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".reminder.AlarmActivity" />
         </activity>
-        <activity android:name=".reminder.AlarmActivity"
-            android:label="@string/remind" />
-        <activity android:name=".reminder.alert.AlarmAlertActivity"
-            android:screenOrientation="portrait">
-        </activity>
+        <activity
+            android:name=".reminder.AlarmActivity"
+            android:label="@string/remind"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reminder.alert.AlarmAlertActivity"
+            android:screenOrientation="portrait" />
 
         <service
             android:name=".reminder.service.AlarmService"
-            android:icon="@drawable/la_logo">
-        </service>
+            android:icon="@drawable/la_logo" />
 
-        <receiver android:name=".reminder.alert.AlarmAlertBroadcastReciever" >
+        <receiver android:name=".reminder.alert.AlarmAlertBroadcastReciever">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-
-        <receiver android:name = ".reminder.telephony.PhoneStateChangedBroadcastReciever">
+        <receiver android:name=".reminder.telephony.PhoneStateChangedBroadcastReciever">
             <intent-filter>
                 <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
         </receiver>
 
+        <activity
+            android:name=".assessment.AssessmentActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".assessment.QuizActivity" />
+        <activity android:name=".assessment.ResultActivity" />
+        <activity android:name=".assessment.ChatActivity"></activity>
     </application>
 
 </manifest>

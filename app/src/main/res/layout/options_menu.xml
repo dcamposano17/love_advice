@@ -33,7 +33,6 @@
         android:textColor="@color/foreColor"
         android:textSize="25.0sp" />
 
-
     <Button
         android:id="@+id/btnFriends"
         android:layout_width="fill_parent"

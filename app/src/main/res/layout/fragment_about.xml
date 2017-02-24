@@ -9,26 +9,61 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="239dp">
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
-            android:layout_height="250dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/about_img" />
-
-        <View
+        <com.example.dioncamposano17.loveadvice20.RevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="8dp"
-            android:background="@drawable/shadow" />
+            android:layout_height="match_parent"
+            android:id="@+id/reveal_layout"
+            tools:context=".MainActivity">
 
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="330dp"
-            android:layout_height="100dp"
-            android:src="@drawable/img_advice1"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Hilbert M. Jimenez                 Junior Programmer"
+                android:background="@color/bg_screen2"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textColor="#FFF"
+                android:typeface="serif"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Mae Ann Reyes            Researcher and Designer"
+                android:background="@color/bg_screen4"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textColor="#FFF"
+                android:typeface="serif"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Kim Alyssa Sinlao                Editor and Designer"
+                android:background="@color/bg_screen1"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textColor="#FFF"
+                android:typeface="serif"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Dion John A. Camposano Senior Programmer"
+                android:background="@color/bg_screen3"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textColor="#FFF"
+                android:typeface="serif"
+                android:textStyle="bold"
+                />
+        </com.example.dioncamposano17.loveadvice20.RevealLayout>
     </RelativeLayout>
 
     <TextView

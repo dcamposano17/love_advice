@@ -20,8 +20,9 @@ import android.widget.TextView;
 
 import com.eftimoff.viewpagertransformers.AccordionTransformer;
 import com.example.dioncamposano17.loveadvice20.model.PrefManager;
+import com.example.dioncamposano17.loveadvice20.util.AlarmMe;
 
-public class WelcomeActivity extends AppCompatActivity  {
+public class WelcomeActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
@@ -38,7 +39,7 @@ public class WelcomeActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_welcome);
 
         prefManager = new PrefManager(this);
-        if (!prefManager.isFirstTimeLaunch()){
+        if (!prefManager.isFirstTimeLaunch()) {
             launchHomeScreen();
             finish();
         }
@@ -78,7 +79,7 @@ public class WelcomeActivity extends AppCompatActivity  {
             public void onClick(View view) {
 
                 int current = getItem(+1);
-                if (current < layouts.length){
+                if (current < layouts.length) {
                     viewPager.setCurrentItem(current);
                 } else {
                     launchHomeScreen();
@@ -97,7 +98,7 @@ public class WelcomeActivity extends AppCompatActivity  {
         public void onPageSelected(int position) {
             addBottomDots(position);
 
-            if (position == layouts.length - 1){
+            if (position == layouts.length - 1) {
                 btnNext.setText(getString(R.string.start));
                 btnSkip.setVisibility(View.GONE);
             } else {
@@ -159,10 +160,8 @@ public class WelcomeActivity extends AppCompatActivity  {
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
             View view = layoutInflater.inflate(layouts[position], container, false);
             container.addView(view);
-
             return view;
         }
 

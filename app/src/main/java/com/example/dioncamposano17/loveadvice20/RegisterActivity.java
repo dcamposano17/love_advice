@@ -150,14 +150,14 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void onRegisterStudent(String stud_no, String lastname, String firstname, String middlename, String program, String gender) {
-        new VolleyRequest(RegisterActivity.this, "insert_student.php", "", "Inserting Data... Please Wait")
+        new VolleyRequest(RegisterActivity.this, "register_student.php", "", "Inserting Data... Please Wait")
                 .onRequest(new Callback() {
                                @Override
                                public void onSuccess(String response) {
                                    android.util.Log.wtf("onSuccess", response);
                                    try {
                                        JSONObject jsonObject = new JSONObject(response);
-                                       if (jsonObject.getString("success").equalsIgnoreCase("success")) {
+                                       if (jsonObject.getString("status").equalsIgnoreCase("true")) {
                                            Toast.makeText(getApplicationContext(), "Registered Successfully!", Toast.LENGTH_SHORT).show();
                                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                                        }
@@ -165,7 +165,6 @@ public class RegisterActivity extends AppCompatActivity {
                                        e.printStackTrace();
                                    }
                                }
-
                                @Override
                                public void onError(String response) {
                                    android.util.Log.e("onError", response);

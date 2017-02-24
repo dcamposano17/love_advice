@@ -33,8 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/user"
-                android:singleLine="true"
-                android:text="008-2016-0001" />
+                android:singleLine="true"/>
         </android.support.design.widget.TextInputLayout>
 
         <requestFocus />
@@ -61,8 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/pass"
-                android:inputType="textPassword"
-                android:text="agno" />
+                android:inputType="textPassword" />
         </android.support.design.widget.TextInputLayout>
 
         <RelativeLayout

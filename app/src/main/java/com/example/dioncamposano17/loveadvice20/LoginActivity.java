@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         imageEye = (ImageView) findViewById(R.id.imageEye);
         imageEyeOff = (ImageView) findViewById(R.id.imageEyeOff);
         imageEye.setVisibility(View.GONE);
@@ -135,9 +134,6 @@ public class LoginActivity extends AppCompatActivity {
         String getUser = inputUsername.getText().toString().trim();
         String getPass = inputPassword.getText().toString().trim();
 
-        String method = "login";
-        //BackGroundTask backGroundTask = new BackGroundTask(this);
-
         if (!validateUsername()) {
             if (getUser.length() == 0) {
                 inputUsername.setError("student number is required");
@@ -151,7 +147,6 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             String finalUser = getUser.replaceAll("-", "");
             onStudentLogin(finalUser, getPass);
-            //backGroundTask.execute(method, finalUser, getPass);
         }
     }
 

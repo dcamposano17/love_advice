@@ -1,10 +1,8 @@
 package com.example.dioncamposano17.loveadvice20.quiz;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.KeyEvent;
@@ -12,9 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.dioncamposano17.loveadvice20.LoginActivity;
 import com.example.dioncamposano17.loveadvice20.MainActivity;
 import com.example.dioncamposano17.loveadvice20.R;
+import com.example.dioncamposano17.loveadvice20.assessment.AssessmentActivity;
 
 /**
  * Created by dioncamposano17 on 20/01/2017.
@@ -36,30 +34,27 @@ public class Options extends Activity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Options.this,
-                        QuizActivity.class);
+                        AssessmentActivity.class).putExtra("title", "Family assessment");
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Family Category", Toast.LENGTH_SHORT).show();
-                finish();
             }
         });
         btnFriends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Options.this,
-                        QuizActivity.class);
+                        AssessmentActivity.class).putExtra("title", "Friends assessment");
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Friends Category", Toast.LENGTH_SHORT).show();
-                finish();
             }
         });
         btnSpecial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Options.this,
-                        QuizActivity.class);
+                        AssessmentActivity.class).putExtra("title", "Special Ones assessment");
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Special Ones Category", Toast.LENGTH_SHORT).show();
-                finish();
             }
         });
     }
